@@ -106,6 +106,7 @@ $pid=$_REQUEST['pid'];
       $rowa=mysqli_fetch_array($querya);
         $id=$rowa['package_id'];
         $package=$rowa['package_name'];      
+        $inclusion=$rowa['package_inclusion'];    
 
         if($package == "Custom")
         {
@@ -149,6 +150,24 @@ $pid=$_REQUEST['pid'];
 <!-- Bootstrap Material Datetime Picker Plugin Js -->
     <script src="admin/plugins/bootstrap-material-datetimepicker/js/bootstrap-material-datetimepicker.js"></script>
 </body>
+    <script type="text/javascript">
+            function KeepCount() {                    
+                var inputTags = document.getElementsByName('menu[]');                    
+                var total = 0;
 
+                for (var i = 0; i < inputTags.length; i++) {
+
+                    if (inputTags[i].checked) {                      
+                            total = total + 1;
+                    }
+
+                    if (total > <?php echo $inclusion;?>) {
+                        alert('Selection already exceed!')
+                        inputTags[i].checked = false;
+                        return false;
+                    }
+                }
+            }
+  </script>
     
 </html>

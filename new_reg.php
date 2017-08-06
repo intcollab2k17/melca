@@ -1,6 +1,6 @@
 <div class="header bg-light-green">
                             <input type="hidden" name="rid" value="<?php echo $_REQUEST['rid'];?>">
-                            <h4>Update existing menu below</h4>
+                            <h4>Update existing package below</h4>
                         </div>
 <?php
 $rid=$_REQUEST['rid']; 
@@ -29,7 +29,7 @@ $rid=$_REQUEST['rid'];
                     <div class="col-md-4">
                         <div class="input-group input-group-lg">
                             <span class="input-group-addon">
-                                <input type="checkbox" class="filled-in" id="ig_checkbox<?php echo $rowc['mmenu'];?>" name="menu[]" value="<?php echo $rowc['mmenu'];?>" <?php echo $flag;?>>
+                                <input type="checkbox" class="filled-in" id="ig_checkbox<?php echo $rowc['mmenu'];?>" name="menu[]" value="<?php echo $rowc['mmenu'];?>" onclick="return KeepCount()" <?php echo $flag;?>>
                                 <label for="ig_checkbox<?php echo $rowc['mmenu'];?>"><?php echo $rowc['menu_name'];?></label>
                             </span>   
                         </div>
